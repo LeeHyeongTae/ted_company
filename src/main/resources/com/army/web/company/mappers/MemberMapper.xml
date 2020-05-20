@@ -1,0 +1,23 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.army.web.company.mappers.MemberMapper">
+    <select id="selectAll" resultType="com.army.web.company.domains.MemberDTO">
+        select
+            army_no armyNo,
+            name,
+            address,
+            brithday,
+            in_army_date inArmyDate,
+            out_date outDate,
+            income_date incomeDate,
+            speciality,
+            position,
+            profile_image profileImage,
+            company_id companyId,
+            platoon_id platoonId,
+            squad_id squadId
+            from member
+    </select>
+</mapper>
