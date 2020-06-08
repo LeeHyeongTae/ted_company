@@ -1,64 +1,27 @@
 <template>
-    <div>
-        <v-app id="inspire">
-            <v-navigation-drawer
-                    v-model="drawer"
-                    app
-            >
-                <v-list dense>
-                    <v-list-item link>
-                        <v-list-item-action>
-                            <v-icon>mdi-home</v-icon>
-                        </v-list-item-action>
-                        <v-list-item-content>
-                            <router-link to="/"><v-list-item-title>Home</v-list-item-title></router-link>
-                        </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item link>
-                        <v-list-item-action>
-                            <v-icon>mdi-contact-mail</v-icon>
-                        </v-list-item-action>
-                        <v-list-item-content>
-                            <router-link to="/composition"><v-list-item-title>{{Composition}}</v-list-item-title></router-link>
-                        </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item link>
-                        <v-list-item-action>
-                            <v-icon>mdi-contact-mail</v-icon>
-                        </v-list-item-action>
-                        <v-list-item-content>
-                           <router-link to="/member"> <v-list-item-title>{{Member}}</v-list-item-title></router-link>
-                        </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item link>
-                        <v-list-item-action>
-                            <v-icon>mdi-contact-mail</v-icon>
-                        </v-list-item-action>
-                        <v-list-item-content>
-                            <router-link to="weapon"><v-list-item-title>{{Weapon}}</v-list-item-title></router-link>
-                        </v-list-item-content>
-                    </v-list-item>
-                </v-list>
-            </v-navigation-drawer>
-
-            <v-app-bar
-                    app
-                    color="indigo"
-                    dark
-            >
-                <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-                <v-toolbar-title>{{title}}</v-toolbar-title>
-            </v-app-bar>
-
-            <v-content><router-view/></v-content>
-            <v-footer
-                    color="indigo"
-                    app
-            >
-                <span class="white--text">&copy; 2019</span>
-            </v-footer>
-        </v-app>
-    </div>
+   <div>
+      <v-container
+              class="fill-height"
+              fluid
+      >
+      <v-row
+              align="center"
+              justify="center"
+      >
+         <v-col
+                 cols="12"
+                 sm="8"
+                 md="4"
+         >
+            <v-card class="elevation-12">
+            <h1>로그인이 필요한 페이지입니다.</h1>
+             <router-link to="/join"><v-btn color="blue">join</v-btn></router-link>
+            <router-link to="/login"><v-btn color="blue">login</v-btn></router-link>
+            </v-card>
+         </v-col>
+      </v-row>
+      </v-container>
+   </div>
 </template>
 
 <script>
@@ -66,7 +29,6 @@
         name: "Home",
         data: () =>({
             drawer: null,
-            title: 'Home', Composition:'조직도', Member:'중대원 목록', Weapon:'화기목록'
         }),
         methods: {
 
