@@ -59,6 +59,7 @@
             color="indigo"
             app
     >
+        <v-spacer></v-spacer>
       <span class="white--text">&copy; 2020.06.04 Lee Hyeong Tae</span>
     </v-footer>
   </v-app>

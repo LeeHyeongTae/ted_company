@@ -9,7 +9,7 @@
                     <v-tab>Mountain</v-tab>
                     <v-tab>electric</v-tab>
                 </v-tabs>
-<!--                <v-spacer></v-spacer>-->
+                <v-spacer></v-spacer>
                 <v-text-field
                         v-model="search"
                         append-icon="mdi-magnify"
@@ -22,7 +22,6 @@
                     :headers="headers"
                     :items="desserts"
                     :search="search"
-                    loading loading-text="Loading... Please wait"
             ></v-data-table>
         </v-card>
     </v-container>
