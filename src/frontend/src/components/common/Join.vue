@@ -27,6 +27,16 @@
                             @input="$v.email.$touch()"
                             @blur="$v.email.$touch()"
                     ></v-text-field>
+                    <v-text-field
+                            v-model="password"
+                            :error-messages="passwordErrors"
+                            :counter="8"
+                            label="Password"
+                            required
+                            type="password"
+                            @input="$v.password.$touch()"
+                            @blur="$v.password.$touch()"
+                    ></v-text-field>
                     <v-select
                             v-model="select"
                             :items="items"
@@ -62,6 +72,7 @@ import { required, maxLength, email } from 'vuelidate/lib/validators'
         validations: {
             name: { required, maxLength: maxLength(10) },
             email: { required, email },
+            password: { required },
             select: { required },
             checkbox: {
                 checked (val) {
@@ -73,6 +84,7 @@ import { required, maxLength, email } from 'vuelidate/lib/validators'
         data: () => ({
             name: '',
             email: '',
+            password: '',
             select: null,
             items: [
                 'Item 1',
@@ -110,6 +122,11 @@ import { required, maxLength, email } from 'vuelidate/lib/validators'
                 !this.$v.email.required && errors.push('E-mail is required')
                 return errors
             },
+            // passwordErrors () {
+            //     const errors = []
+            //     if (!this.$v.password.$dirty) return errors
+            //     !this.$v.password.required && errors.push('password is required.')
+            // }
         },
 
         methods: {
@@ -120,6 +137,7 @@ import { required, maxLength, email } from 'vuelidate/lib/validators'
                 this.$v.$reset()
                 this.name = ''
                 this.email = ''
+                this.password = ''
                 this.select = null
                 this.checkbox = false
             },
