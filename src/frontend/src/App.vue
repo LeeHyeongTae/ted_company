@@ -1,60 +1,22 @@
 <template>
   <v-app id="inspire">
+   <v-parallax
+     src="https://farm6.staticflickr.com/5343/8977838805_0e5dd85d2e_c.jpg"></v-parallax>
     <v-navigation-drawer
             v-model="drawer"
             app
     >
-      <v-list dense>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <router-link to="/"><v-list-item-title>Home</v-list-item-title></router-link>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <router-link to="/history"><v-list-item-title>History</v-list-item-title></router-link>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <router-link to="/composition"><v-list-item-title>Composition</v-list-item-title></router-link>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-             <router-link to="/member"><v-list-item-title>Member</v-list-item-title></router-link>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-action>
-            <v-icon>mdi-contact-mail</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <router-link to="/weapon"><v-list-item-title>Weapon</v-list-item-title></router-link>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+      <Navidrawer/>
     </v-navigation-drawer>
 
     <v-app-bar
             app
             color="indigo"
+            hide-on-scroll
             dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>중대 관리 시스템</v-toolbar-title>
+      <v-toolbar-title>ALL of Bicycle</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -89,8 +51,10 @@
         </v-list>
       </v-menu>
     </v-app-bar>
+    <v-content>
+      <router-view/>
+    </v-content>
 
-    <v-content><router-view/></v-content>
     <v-footer
             color="indigo"
             app
@@ -101,10 +65,15 @@
 </template>
 
 <script>
+import Navidrawer from "./components/common/Navidrawer";
 export default {
   name: 'App',
-  data:()=>({
-    drawer: null,
-  })
-};
+  components: {Navidrawer},
+  data: () => ({
+    drawer: false,
+  }),
+  methods: {},
+  computed: {
+  },
+}
 </script>

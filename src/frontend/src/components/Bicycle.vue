@@ -2,8 +2,14 @@
     <v-container>
         <v-card>
             <v-card-title>
-                Weapon
-                <v-spacer></v-spacer>
+                All of Bicycle
+                <v-tabs>
+                    <v-tab>All</v-tab>
+                    <v-tab>Road</v-tab>
+                    <v-tab>Mountain</v-tab>
+                    <v-tab>electric</v-tab>
+                </v-tabs>
+<!--                <v-spacer></v-spacer>-->
                 <v-text-field
                         v-model="search"
                         append-icon="mdi-magnify"
@@ -16,6 +22,7 @@
                     :headers="headers"
                     :items="desserts"
                     :search="search"
+                    loading loading-text="Loading... Please wait"
             ></v-data-table>
         </v-card>
     </v-container>
