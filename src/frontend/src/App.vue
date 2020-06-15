@@ -20,11 +20,11 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <v-btn icon @click="searchButton">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
-      <v-btn icon>
+      <v-btn icon @click="popUp">
         <v-avatar>
           <v-icon>mdi-account-circle</v-icon>
         </v-avatar>
@@ -41,8 +41,8 @@
         </template>
 
         <v-list>
-          <v-list-item>
-            <v-list-item-title></v-list-item-title>
+          <v-list-item v-for="item of items" :key="item.title">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -68,9 +68,20 @@ export default {
   components: {Navidrawer},
   data: () => ({
     drawer: false,
+      items: [
+          {title: 'Login'},
+          {title: 'MyPage'},
+          {title: 'Setting'},
+
+      ]
   }),
   methods: {
-
+    searchButton(){
+          alert('검색 버튼 클릭')
+      },
+    popUp(){
+        alert('마이 페이지 클릭')
+    },
   },
   computed: {
   },
