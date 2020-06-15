@@ -8,7 +8,7 @@
       justify="center"
    >
        <v-card>
-           <iframe width="1920" height="1080" src="https://www.youtube.com/embed/d2sCSt-6_Mo?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           <iframe width="1280" height="720" src="https://www.youtube.com/embed/d2sCSt-6_Mo?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        </v-card>
 <!--       <v-card class="elevation-12">-->
 <!--         <h1>로그인이 필요한 페이지입니다.</h1>-->

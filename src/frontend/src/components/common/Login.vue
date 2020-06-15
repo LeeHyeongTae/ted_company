@@ -24,6 +24,7 @@
                     <v-card-text>
                         <v-form>
                             <v-text-field
+                                    id="emailText"
                                     label="E-mail"
                                     name="login"
                                     prepend-icon="mdi-account"
@@ -42,7 +43,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="primary">Join</v-btn>
-                        <v-btn color="primary">Login</v-btn>
+                        <v-btn color="primary" @click="login">Login</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>
@@ -52,7 +53,14 @@
 
 <script>
     export default {
-        name: "Login"
+        methods: {
+            login(){
+                let email = document.getElementById('emailText').value
+                let passwd = document.getElementById('password').value
+                this.$store.dispatch('member/login', {email: email, passwd:passwd})
+            }
+        }
+
     }
 </script>
 

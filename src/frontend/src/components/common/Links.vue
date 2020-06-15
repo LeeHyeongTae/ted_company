@@ -40,10 +40,10 @@
             return {
                 items: [
                     {title: 'TREK',link:'https://www.trekbikes.com/kr/ko_KR/' ,img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTctM4fgbGW2tVXZsibt8InPVEdD-uPQl8bdQAdMAoabV4OxvHD&usqp=CAU'},
-                    {title: 'SPECIALIZED',link:'https://www.specialized.com/kr/ko' ,img: 'https://lh3.googleusercontent.com/proxy/7xvVUzrpDEeRkkFSH6b4DmDVmvSYDtjvTxgAi5PA2mL5ymAz2Gv-9l3ML8aD2elk33STbRD9zoUMFE6_VDND-jacS7eSLzF89PvG4knjrgvOHBDauNUOa8dOvYtrucicMf7mXmef3a5OfQHONX4fsdMFeX4uPjf1K3sX-WP0KX8U1_Uyh12iYw5aSnRrYeLKvoqEmVKiWqShgwwb9QhU2u1o3dk'},
-                    {title: 'GIANT',link:'https://www.giant-bicycles.com/kr' ,img: 'https://lh3.googleusercontent.com/proxy/NGl32sWRjpItctOHFUN7OWLpEdhLKAsuFiYfJKphM6Vdzct7jDwhXzkkrqmX9bqtis675t77wYvmpNdwrn02hIkAwpG85SYYu3uSWpv9DhbIi_IyaT593ElrzM3CZVLt1ACKWwG3uc-YLuYMuOQFqblfIhfHOWLWwMxCgvqAsWe2MqVm2RsUZHXSoxbwUchuxgayvjV-2z9LaJLc_IoOLgCBqGnQFqUvN21UsZbdBOuE2yoScglIHry59-1UmEjCCcpKAt5MwUcVUGfkbQR3t-8m_3efcmJRv0Rk15oIhxi1jhM'},
-                    {title: 'MERIDA',link:'https://www.merida-bikes.com/ko-kr/' ,img: 'https://lh3.googleusercontent.com/proxy/rojKj2pHObPM-LsXtcBfM854w72TiBmv7AFB1BqYCcZ0c6Ku0KC76wWy_o_39xjsfxhfRXaME7aUn2XFTz3KSV3JB1ACZF86xAK2ZiJcgw' },
-                    {title: 'SCOTT',link:'https://www.scott-korea.com/main/index.html' ,img: 'https://lh3.googleusercontent.com/proxy/FbjxSOblOrpfnFpwwH30S9uALNJx26rwQB-uLvDPRCHcuVp4pTg-QVN38Mi_SSMyfcBacItn1pmWbReJnFuqOkQwC5kmCAS8uOle14oVWnnHm8hu9OjDW2vCkBrvplt_WOsTKqKfXdzNW_Xx2Ft88a4Ok68TvDXS-j-G9ZYm_W8b' },
+                    {title: 'SPECIALIZED',link:'https://www.specialized.com/kr/ko' ,img: 'https://bicigrino.com/images/rocketlauncher/frontpage/sidebar-a/specialized_movil.jpg'},
+                    {title: 'GIANT',link:'https://www.giant-bicycles.com/kr' ,img: 'https://4.bp.blogspot.com/-RQh2Ux8zGOE/VzxpU8BmJ9I/AAAAAAAAEd4/wP-7C-Txfr8i4EE5dNaA3H8EWrUxywrowCLcB/s1600/Giant%2BBicycles%2BLogo.png'},
+                    {title: 'MERIDA',link:'https://www.merida-bikes.com/ko-kr/' ,img: 'https://lh3.googleusercontent.com/proxy/H4Meov-nzpDA2AEgSqmVO3mwuJzbD-GBwIlIEaJu6-9y8Urk1aclZoE_hBMx9aY3nRHf-3np0MAAyE5Q8XobctACcqeosGk2iZ4wIvrTTFJR3zPo5Ygk-aY1m4VYyTJsr4TFSclCdBp0O406YG57Pqg' },
+                    {title: 'SCOTT',link:'https://www.scott-korea.com/main/index.html' ,img: 'https://www.ilbe.com/file/download/5131834259' },
                 ]
             }
         }
