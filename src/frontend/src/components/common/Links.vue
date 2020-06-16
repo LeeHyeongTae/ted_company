@@ -43,7 +43,8 @@
                     {title: 'SPECIALIZED',link:'https://www.specialized.com/kr/ko' ,img: 'https://bicigrino.com/images/rocketlauncher/frontpage/sidebar-a/specialized_movil.jpg'},
                     {title: 'GIANT',link:'https://www.giant-bicycles.com/kr' ,img: 'https://4.bp.blogspot.com/-RQh2Ux8zGOE/VzxpU8BmJ9I/AAAAAAAAEd4/wP-7C-Txfr8i4EE5dNaA3H8EWrUxywrowCLcB/s1600/Giant%2BBicycles%2BLogo.png'},
                     {title: 'MERIDA',link:'https://www.merida-bikes.com/ko-kr/' ,img: 'https://lh3.googleusercontent.com/proxy/H4Meov-nzpDA2AEgSqmVO3mwuJzbD-GBwIlIEaJu6-9y8Urk1aclZoE_hBMx9aY3nRHf-3np0MAAyE5Q8XobctACcqeosGk2iZ4wIvrTTFJR3zPo5Ygk-aY1m4VYyTJsr4TFSclCdBp0O406YG57Pqg' },
-                    {title: 'SCOTT',link:'https://www.scott-korea.com/main/index.html' ,img: 'https://www.ilbe.com/file/download/5131834259' },
+                    {title: 'SCOTT',link:'https://www.scott-korea.com/main/index.html' ,img: 'https://www.ilbe.com/file/download/5131834259'},
+                    {title: 'CELLO',link:'https://www.cellobike.co.kr/main/main.html' ,img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcROnaS7H4FMgkEYXBqZetSANoqKUxa5iJoe-B38dv2Aqbn-s3JB&usqp=CAU'},
                 ]
             }
         }

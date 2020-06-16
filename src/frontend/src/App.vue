@@ -1,7 +1,5 @@
 <template>
   <v-app id="inspire">
-   <v-parallax
-     src="https://farm6.staticflickr.com/5343/8977838805_0e5dd85d2e_c.jpg"></v-parallax>
     <v-navigation-drawer
             v-model="drawer"
             app
@@ -11,7 +9,7 @@
 
     <v-app-bar
             app
-            color="indigo"
+            color="black"
             hide-on-scroll
             dark
     >
@@ -52,7 +50,7 @@
     </v-content>
 
     <v-footer
-            color="indigo"
+            color="black"
             app
     >
         <v-spacer></v-spacer>
@@ -73,7 +71,7 @@ export default {
           {title: 'MyPage'},
           {title: 'Setting'},
 
-      ]
+      ],
   }),
   methods: {
     searchButton(){
