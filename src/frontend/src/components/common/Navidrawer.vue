@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <v-container>
         <v-list-item>
             <v-list-item-avatar>
                 <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
@@ -62,7 +62,7 @@
                 </v-list-item-content>
             </v-list-item>
         </v-list>
-    </div>
+    </v-container>
 </template>
 
 <script>

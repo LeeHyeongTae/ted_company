@@ -1,16 +1,8 @@
 <template>
     <v-container>
-        <v-row
-                align="center"
-                justify="center"
-        >
-            <v-col
-                    cols="12"
-                    sm="8"
-                    md="4"
-            >
-                <form>
-                    <v-text-field
+      <v-card v-if="loginModal">
+      <v-form>
+         <v-text-field
                             v-model="name"
                             :error-messages="nameErrors"
                             :counter="10"
@@ -19,7 +11,7 @@
                             @input="$v.name.$touch()"
                             @blur="$v.name.$touch()"
                     ></v-text-field>
-                    <v-text-field
+         <v-text-field
                             v-model="email"
                             :error-messages="emailErrors"
                             label="E-mail"
@@ -27,7 +19,7 @@
                             @input="$v.email.$touch()"
                             @blur="$v.email.$touch()"
                     ></v-text-field>
-                    <v-text-field
+         <v-text-field
                             v-model="password"
                             :error-messages="passwordErrors"
                             :counter="8"
@@ -37,7 +29,7 @@
                             @input="$v.password.$touch()"
                             @blur="$v.password.$touch()"
                     ></v-text-field>
-                    <v-select
+         <v-select
                             v-model="select"
                             :items="items"
                             :error-messages="selectErrors"
@@ -46,7 +38,7 @@
                             @change="$v.select.$touch()"
                             @blur="$v.select.$touch()"
                     ></v-select>
-                    <v-checkbox
+         <v-checkbox
                             v-model="checkbox"
                             :error-messages="checkboxErrors"
                             label="Do you agree?"
@@ -55,11 +47,43 @@
                             @blur="$v.checkbox.$touch()"
                     ></v-checkbox>
 
-                    <v-btn class="mr-4" @click="submit">submit</v-btn>
-                    <v-btn @click="clear">clear</v-btn>
-                </form>
-            </v-col>
-        </v-row>
+         <v-btn class="mr-4" @click="submit">submit</v-btn>
+            <v-btn @click="clear">clear</v-btn>
+      </v-form>
+      </v-card>
+      <v-card class="elevation-12" v-else>
+            <v-toolbar
+                    color="primary"
+                    dark
+                    flat
+            >
+                <v-toolbar-title>Login</v-toolbar-title>
+                <v-spacer></v-spacer>
+            </v-toolbar>
+            <v-card-text>
+                <v-form>
+                    <v-text-field
+                            id="emailText"
+                            label="E-mail"
+                            name="login"
+                            prepend-icon="mdi-account"
+                            type="text"
+                    ></v-text-field>
+                    <v-text-field
+                            id="password"
+                            label="Password"
+                            name="password"
+                            prepend-icon="mdi-lock"
+                            type="password"
+                    ></v-text-field>
+                </v-form>
+            </v-card-text>
+            <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" @click="joinModal">Join</v-btn>
+                <v-btn color="primary" @click="login">Login</v-btn>
+            </v-card-actions>
+        </v-card>
     </v-container>
 </template>
 
@@ -82,6 +106,7 @@ import { required, maxLength, email } from 'vuelidate/lib/validators'
         },
 
         data: () => ({
+            loginModal: false,
             name: '',
             email: '',
             password: '',
@@ -141,6 +166,14 @@ import { required, maxLength, email } from 'vuelidate/lib/validators'
                 this.select = null
                 this.checkbox = false
             },
+            login(){
+                let email = document.getElementById('emailText').value
+                let passwd = document.getElementById('password').value
+                this.$store.dispatch('member/login', {email: email, passwd:passwd})
+            },
+            joinModal(){
+                this.loginModal = true
+            }
         },
     }
 </script>

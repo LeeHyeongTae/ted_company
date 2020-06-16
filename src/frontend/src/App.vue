@@ -3,9 +3,7 @@
     <v-navigation-drawer
             v-model="drawer"
             app
-    >
-      <Navidrawer/>
-    </v-navigation-drawer>
+    ><Navidrawer/></v-navigation-drawer>
 
     <v-app-bar
             app
@@ -21,12 +19,20 @@
       <v-btn icon @click="searchButton">
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
+      <v-dialog v-model="dialog" max-width="500">
+        <template v-slot:activator="{on, attrs}">
+          <v-btn
+            v-bind="attrs"
+            v-on="on"
+            icon>
+            <v-avatar>
+              <v-icon>mdi-account-circle</v-icon>
+            </v-avatar>
+          </v-btn>
+        </template>
+        <Join/>
+      </v-dialog>
 
-      <v-btn icon @click="popUp">
-        <v-avatar>
-          <v-icon>mdi-account-circle</v-icon>
-        </v-avatar>
-      </v-btn>
 
       <v-menu
               left
@@ -45,9 +51,7 @@
         </v-list>
       </v-menu>
     </v-app-bar>
-    <v-content>
-      <router-view/>
-    </v-content>
+    <v-content><router-view/></v-content>
 
     <v-footer
             color="black"
@@ -61,10 +65,12 @@
 
 <script>
 import Navidrawer from "./components/common/Navidrawer";
+import Join from "./components/common/Join";
 export default {
   name: 'App',
-  components: {Navidrawer},
+  components: {Join, Navidrawer},
   data: () => ({
+    dialog: false,
     drawer: false,
       items: [
           {title: 'Login'},
