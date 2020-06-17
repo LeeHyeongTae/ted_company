@@ -4,7 +4,7 @@ import member from "./member";
 import bicycle from "./bicycle";
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+export const store = new Vuex.Store({
   modules: {
     member, bicycle
   }

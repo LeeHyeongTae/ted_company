@@ -2,7 +2,7 @@ import axios from "axios";
 import router from "@/router";
 
 const state = {
-   context: 'http://localhost:3000'
+   context: 'http://localhost:3000',
 }
 
 const actions = {
@@ -17,13 +17,13 @@ const actions = {
             .catch(()=>{
                 alert('통신 에러')
             })
-    }
+    },
 }
 
 const mutations = {
     LOGIN(state, data){
         alert(`${data}`)
-    }
+    },
 }
 
 export default {
