@@ -23,7 +23,7 @@
             </v-list-item>
             <v-list-item link>
                 <v-list-item-action>
-                    <v-icon>mdi-contact-mail</v-icon>
+                    <v-icon>mdi-email</v-icon>
                 </v-list-item-action>
                 <v-list-item-content>
                     <router-link to="/intro"><v-list-item-title>Intro</v-list-item-title></router-link>
@@ -39,7 +39,7 @@
             </v-list-item>
             <v-list-item link>
                 <v-list-item-action>
-                    <v-icon>mdi-contact-mail</v-icon>
+                    <v-icon>mdi-info</v-icon>
                 </v-list-item-action>
                 <v-list-item-content>
                     <router-link to="/info"><v-list-item-title>information</v-list-item-title></router-link>

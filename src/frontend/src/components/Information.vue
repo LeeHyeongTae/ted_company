@@ -1,11 +1,21 @@
 <template>
-    <h1>Information</h1>
+    <div>
+        <v-card>
+            <v-card-title>Information</v-card-title>
+            <v-card-text>
+
+            </v-card-text>
+        </v-card>
+    </div>
+
 </template>
 
 <script>
-    export default {
-        name: "Information"
-    }
+export default {
+    data: () => ({
+    }),
+
+}
 </script>
 
 <style scoped>

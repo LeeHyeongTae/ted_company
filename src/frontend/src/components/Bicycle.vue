@@ -1,5 +1,6 @@
 <template>
     <v-container>
+        <v-btn color="indigo" @click="trek">크롤링</v-btn>
         <v-card>
             <v-card-title>
                 All of Bicycle
@@ -34,16 +35,15 @@
                 search: '',
                 headers: [
                     {
-                        text: 'Dessert (100g serving)',
+                        text: 'Model Name',
                         align: 'start',
                         sortable: false,
-                        value: 'name',
+                        value: 'title',
                     },
-                    { text: 'Calories', value: 'calories' },
-                    { text: 'Fat (g)', value: 'fat' },
-                    { text: 'Carbs (g)', value: 'carbs' },
-                    { text: 'Protein (g)', value: 'protein' },
-                    { text: 'Iron (%)', value: 'iron' },
+                    { text: 'No.', value: 'bicycleSeq' },
+                    { text: 'Image', value: 'image' },
+                    { text: 'Price (원)', value: 'price' },
+                    { text: 'Year (년식)', value: 'year' },
                 ],
                 desserts: [
                     {
@@ -129,6 +129,11 @@
                 ],
             }
         },
+        methods: {
+            trek() {
+                this.$store.dispatch('bicycle/trekCrawler')
+            }
+        }
     }
 </script>
 
