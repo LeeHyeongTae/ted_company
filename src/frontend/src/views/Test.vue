@@ -17,9 +17,14 @@
 
 <script>
     export default {
-        data: () => ({
-            message: '안녕 난 뷰야'
-        }),
+        data ()  {
+            return {
+                cnt: 0,
+                count: 7,
+                message: '안녕 난 뷰야'
+            }
+
+        },
         methods: {
             reverseMsg: function () {
                 // 현재 가지고 있는 메세지를 스필릿해서 리버스를 통해서 전부 순서를 뒤집는다. 최종적으로 조인을 통해 다시 결합한다.
@@ -31,9 +36,13 @@
             increment() {
                 this.$store.commit('increment')
                 // 먼저 기능을 연동하고 이후 상태값 저장하는 것을 한번 살펴보도록 한다.(F5)
+                this.$cookies.set('value', this.$store.state.count)
+                console.log(this.$cookies.get('value'))
             },
             decrement() {
                 this.$store.commit('decrement')
+                this.$cookies.set('value', this.$store.state.count, '24h')
+                console.log(this.$cookies.get('value'))
             },
             randomNumber() {
                 this.$store.dispatch('generateRandomNumber')
@@ -41,11 +50,13 @@
         },
         // Vue의 경우엔 객체에 대한 변경을 감지하면 무조건 Rendering을 수행한다.
         // Rendering이란 화면을 그리는 작업이다.
-        beforeCreate() {
+        beforeCreate() {//객체 생성 전
             //alert('beforeCreate'+this.message)
         },
-        created() {
-            //alert('Create'+this.message)
+        created() {//객체 생성
+            // this.$cookies에 'value'키값 형태로 값이 저장되어 있다. 하지만 이것을 store에 있는 count에 복원
+            // 해주지 않았기 때문에 상태값이 저장되지 않았던 것이다.
+            this.$store.state.count = this.$cookies.get('value')
         },
         beforeMount() {
            // alert('beforeMount'+this.message)

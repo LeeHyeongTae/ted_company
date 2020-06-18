@@ -8,27 +8,36 @@ const state = {
 }
 
 const actions = {
-    async trekCrawler({commmt}){
+    async trekCrawler({commit}){
         axios.get(`${state.context}/proxy/bicycleCrawler/trek`)
             .then(({data})=>{
                 console.log("자바 서버 다녀옴.")
-                commmt('TREK', data)
+                commit('TREK', data)
             })
-            .catch(()=>{
-                alert('action error')
+            .catch((exception)=>{
+                alert('action error'+exception)
             })
     }
 }
 
 const mutations = {
     TREK(state, data){
-        state.bicycle = data.list
+        state.bicycle = []
         state.count = data.count
+        data.list.forEach(item => {
+            state.bicycle.push({
+                bicycleSeq: item.bicycleSeq,
+                title: item.title,
+                manufacturer: item.manufacturer,
+                kind: item.kind,
+                image: item.image,
+                year: item.year,
+                price: item.price
+            })
+        })
     }
 }
-const getters = {
-
-}
+const getters = {}
 
 export default {
     name : 'bicycle',

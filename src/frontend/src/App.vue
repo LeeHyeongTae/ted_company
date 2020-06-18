@@ -12,7 +12,7 @@
             dark
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title>ALL of Bicycle</v-toolbar-title>
+      <router-link to="/"><v-toolbar-title>ALL of Bicycle</v-toolbar-title></router-link>
 
       <v-spacer></v-spacer>
 
@@ -137,11 +137,35 @@
     <v-content><router-view/></v-content>
 
     <v-footer
+            absolute
+            class="font-weight-medium"
             color="black"
             app
     >
-        <v-spacer></v-spacer>
-      <span class="white--text">&copy; 2020.06.04 Lee Hyeong Tae</span>
+      <v-card>
+        <v-carousel
+                cycle
+                height="600"
+                show-arrows-on-hover
+        >
+          <v-carousel-item
+                  v-for="(image,i) in images"
+                  :key="i"
+                  :src="image.src"
+                  reverse-transition="fade-transition"
+                  transition="fade-transition"
+          ></v-carousel-item>
+        </v-carousel>
+      </v-card>
+
+      <v-divider/>
+      <v-row
+        justify="center"
+        no-gutters>
+        <span class="white--text">
+          &copy; {{ new Date().getFullYear() }} - <strong>Bitcamp</strong>
+        </span>
+      </v-row>
     </v-footer>
   </v-app>
 </template>
@@ -174,6 +198,13 @@ export default {
           {title: 'Setting'},
 
       ],
+    images: [
+      {src: 'https://wallpaperaccess.com/full/1222907.jpg'},
+      {src: 'https://trek.scene7.com/is/image/TrekBicycleProducts/howtobuyabikeonline_homepage2?$responsive-pjpg$&cache=on,on&wid=1920'},
+      {src: 'https://dk8nafk1kle6o.cloudfront.net/Images/Shared/Pages/TCR_RangePage_Dektop_banner_1920x1000_1585219894.jpg'},
+      {src: 'https://cdn.shopify.com/s/files/1/0232/3305/files/NovWallpaperDesktop.jpg'},
+      {src: 'https://media.daysoftheyear.com/20171223121018/bicycle-day1-scaled.jpg'},
+    ],
     loginModal: false,
     name: '',
     email: '',

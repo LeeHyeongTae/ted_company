@@ -14,11 +14,9 @@ export const store = new Vuex.Store({
   mutations: {
     increment (state) {
       state.count++
-      this.$cookies.set('value', this.$store.state.count)
     },
     decrement (state) {
       state.count--
-      this.$cookies.set('', this.$store.state.count)
     },
     successGenerateRandomNumber (state, payload) {
       state.random = payload
@@ -30,14 +28,24 @@ export const store = new Vuex.Store({
   // Mutex(뮤텍스)
   actions: {
     generateRandomNumber ({commit}) {
-      axios.get('http://localhost:3000/random')
+      axios.get('http://localhost:5000/random')
           .then((res) => {
-            console.log(res)
-            commit('successGenerateRandomNumber', res.data.randNumber)
+            console.log('res = ' + parseInt(res.data.randNumber))
+            commit('successGenerateRandomNumber', parseInt(res.data.randNumber))
           })
     }
   },
-  getters: {},
+  getters: {
+    count (state, getters) {
+      return Math.pow(state.count, getters.weight)
+    },
+    weight (state) {
+      return state.weight
+    },
+    random (state) {
+      return state.random
+    }
+  },
   modules: {
     member, bicycle
   }

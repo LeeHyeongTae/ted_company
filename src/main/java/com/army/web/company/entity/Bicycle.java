@@ -18,5 +18,7 @@ public class Bicycle {
     @Column private String image;
     @Column private String year;
     @Column private String price;
+    @Column private String manufacturer;
+    @Column private String kind;
 
 }
