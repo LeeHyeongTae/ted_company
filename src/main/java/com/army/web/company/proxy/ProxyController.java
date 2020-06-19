@@ -17,11 +17,10 @@ public class ProxyController {
     @Autowired BicycleRepository bicycleRepository;
     @Autowired Crawler crawler;
 
-    @GetMapping("/bicycleCrawler/{searchWord}")
-    public HashMap<String, Object> bicycle(@PathVariable String searchWord) {
-        pxy.println("vue에서 보낸 keyword = "+searchWord);
+    @GetMapping("/bicycle")
+    public HashMap<String, Object> bicycle() {
         box.clear();
-//        if(bicycleRepository.count() == 0)crawler.bikes();
+        if(bicycleRepository.count() == 0) crawler.bikes();
         List<Bicycle> list = bicycleRepository.findAll();
         box.put("list", list);
         box.put("count", list.size());

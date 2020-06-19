@@ -8,11 +8,11 @@ const state = {
 }
 
 const actions = {
-    async trekCrawler({commit}){
-        axios.get(`${state.context}/proxy/bicycleCrawler/trek`)
+    async dataCall({commit}){
+        axios.get(`${state.context}/proxy/bicycle`)
             .then(({data})=>{
                 console.log("자바 서버 다녀옴.")
-                commit('TREK', data)
+                commit('BICYCLES', data)
             })
             .catch((exception)=>{
                 alert('action error'+exception)
@@ -21,13 +21,13 @@ const actions = {
 }
 
 const mutations = {
-    TREK(state, data){
+    BICYCLES(state, data){
         state.bicycle = []
         state.count = data.count
         data.list.forEach(item => {
             state.bicycle.push({
                 bicycleSeq: item.bicycleSeq,
-                title: item.title,
+                name: item.title,
                 manufacturer: item.manufacturer,
                 kind: item.kind,
                 image: item.image,

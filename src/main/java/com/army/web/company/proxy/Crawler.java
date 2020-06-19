@@ -16,10 +16,11 @@ public class Crawler extends Proxy{
     @Autowired BicycleRepository bicycleRepository;
 
     public void bikes(){
-//        giantRoadBike();
-//        giantMountainBike();
-//        giantElectricBike();
+        giantRoadBike();
+        giantMountainBike();
+        giantElectricBike();
         trekBike();
+        specializedBike();
     }
     private void trekBike(){
         inventory.clear();
