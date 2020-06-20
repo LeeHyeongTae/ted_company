@@ -1,28 +1,53 @@
 import axios from "axios";
-import router from "@/router";
 
 const state = {
-   context: 'http://localhost:3000',
+   context: 'http://localhost:5000',
+   auth: false,
+   member: {}
 }
 
 const actions = {
-    async login({commit}, user){
-        alert(user.email)
+    async submit({commit}, user){
+        console.log('name = '+user.name+' email = '+user.email+' passwd = '+user.password)
+        const headers = {
+            authorization: 'JWT fefege..',
+            Accept: 'application/json',
+            'Content-Type':'application/json'
+        }
         axios
-            .get(`${state.context}/members/${user.email}/${user.passwd}`)
+            .post(`${state.context}/members/join`, user, headers)
             .then(({data})=>{
-                router.push('/intro')
-                commit('LOGIN', data)
+                console.log('submit server success')
+                commit('SUBMIT', data)
             })
-            .catch(()=>{
-                alert('통신 에러')
+            .catch((e)=>{
+                console.log('Submit'+e)
             })
     },
+    async login({commit}, user) {
+        console.log('login action')
+        const headers = {
+            authorization: 'JWT fefege..',
+            Accept: 'application/json',
+            'Content-Type':'application/json'
+        }
+        axios
+            .post(`${state.context}/members/login`, user, headers)
+            .then(({data})=>{
+                commit('LOGIN', data)
+            })
+            .catch((e)=>{
+                console.log('Login'+e)
+            })
+    }
 }
 
 const mutations = {
+    SUBMIT(state, data){
+      console.log(data)
+    },
     LOGIN(state, data){
-        alert(`${data}`)
+        console.log(data)
     },
 }
 

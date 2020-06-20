@@ -91,18 +91,19 @@
             <v-card-text>
               <v-form>
                 <v-text-field
-                        id="emailText"
+                        id="loginEmailText"
                         label="E-mail"
                         name="login"
                         prepend-icon="mdi-account"
                         type="text"
                 ></v-text-field>
                 <v-text-field
-                        id="password"
+                        id="loginPassword"
                         label="Password"
                         name="password"
                         prepend-icon="mdi-lock"
                         type="password"
+                        @keyup.enter="login"
                 ></v-text-field>
               </v-form>
             </v-card-text>
@@ -216,7 +217,10 @@ export default {
           alert('검색 버튼 클릭')
       },
     submit () {
-      alert('submit')
+      this.$store.dispatch('member/submit',
+              {name:document.getElementById('nameText').value,
+                       email:document.getElementById('emailText').value,
+                       password:document.getElementById('passwordText').value})
     },
     clear () {
       document.getElementById('nameText').value = ''
@@ -225,13 +229,11 @@ export default {
       this.checkbox = false
     },
     login(){
-      let email = document.getElementById('emailText').value
-      let passwd = document.getElementById('password').value
-      this.$store.dispatch('member/login', {email: email, passwd:passwd})
+      this.$store.dispatch('member/login',
+              {email:document.getElementById('loginEmailText').value,
+                       password:document.getElementById('loginPassword').value})
     },
-    ModalSwitch(){
-      (this.loginModal != true)? this.loginModal = true : this.loginModal = false
-    },
+    ModalSwitch(){(this.loginModal != true)? this.loginModal = true : this.loginModal = false},
     cancel(){
       this.dialog = false
       this.loginModal = false
