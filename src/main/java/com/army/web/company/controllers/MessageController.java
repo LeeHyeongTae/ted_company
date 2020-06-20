@@ -2,7 +2,6 @@ package com.army.web.company.controllers;
 
 import com.army.web.company.entity.Message;
 import com.army.web.company.request.MessageData;
-import com.army.web.company.services.MessageService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

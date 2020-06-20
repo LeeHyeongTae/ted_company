@@ -5,19 +5,12 @@
 <mapper namespace="com.army.web.company.mappers.MemberMapper">
     <select id="selectAll" resultType="com.army.web.company.domains.MemberDTO">
         select
-            army_no armyNo,
             name,
-            address,
-            brithday,
-            in_army_date inArmyDate,
-            out_date outDate,
-            income_date incomeDate,
-            speciality,
-            position,
-            profile_image profileImage,
-            company_id companyId,
-            platoon_id platoonId,
-            squad_id squadId
+            email,
+            password
             from member
     </select>
+    <insert id="insertMember" parameterType="com.army.web.company.domains.MemberDTO">
+        insert into from member values
+    </insert>
 </mapper>

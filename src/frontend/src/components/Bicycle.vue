@@ -16,7 +16,7 @@
 
             <v-data-table
                 :headers="headers"
-                :items="Bikes"
+                :items="bikes"
                 :search="search">
                 <template v-slot:item.image="{item}">
                     <img :src=item.image width="345" height="230"/>
@@ -74,7 +74,7 @@ import {mapState} from 'vuex'
         },
         computed: {
             ...mapState({
-                Bikes: state => state.bicycle.bicycle,
+                bikes: state => state.bicycle.bicycle,
                 count: state => state.bicycle.count
             }),
         },

@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface MemberMapper {
-    public List<MemberDTO> selectAll();
+
 }
