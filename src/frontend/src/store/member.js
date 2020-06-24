@@ -8,7 +8,7 @@ const state = {
 
 const actions = {
     async submit({commit}, user){
-        console.log('name = '+user.name+' email = '+user.email+' passwd = '+user.password)
+        console.log(user)
         const headers = {
             authorization: 'JWT fefege..',
             Accept: 'application/json',
@@ -34,6 +34,7 @@ const actions = {
         axios
             .post(`${state.context}/members/login`, user, headers)
             .then(({data})=>{
+                console.log('login server success')
                 commit('LOGIN', data)
             })
             .catch((e)=>{

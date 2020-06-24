@@ -221,6 +221,7 @@ export default {
               {name:document.getElementById('nameText').value,
                        email:document.getElementById('emailText').value,
                        password:document.getElementById('passwordText').value})
+      this.clear()
     },
     clear () {
       document.getElementById('nameText').value = ''
@@ -229,16 +230,19 @@ export default {
       this.checkbox = false
     },
     login(){
-      this.$store.dispatch('member/login',
-              {email:document.getElementById('loginEmailText').value,
-                       password:document.getElementById('loginPassword').value})
-    },
+        this.$store.dispatch('member/login',
+                {email:document.getElementById('loginEmailText').value,
+                        password:document.getElementById('loginPassword').value})
+        this.dialog = false
+        this.loginModal = false
+      },
     ModalSwitch(){(this.loginModal != true)? this.loginModal = true : this.loginModal = false},
     cancel(){
       this.dialog = false
       this.loginModal = false
     }
-  },
+    },
+
   computed: {
 
   },
